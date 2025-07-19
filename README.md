@@ -1,4 +1,4 @@
 # CodeIntent
- This repo provides the implementation of [Your Coding Intent is Secretly in the Context and You Should Deliberately Infer It Before Completion]
+ This repo provides the implementation of [From Context to Intent: Reasoning‑Guided Function‑Level Code Completion]
 
 We will release the code and data soon.
