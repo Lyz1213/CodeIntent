@@ -8,7 +8,7 @@ We use `inference.py` to generate completions for each test instance. The genera
 
 ```bash
 python inference.py \
-    --output_dir ./results/<RESULT_DIR> \
+    --output_dir <RESULT_DIR> \
     --level <LEVEL_NAME> \
     --moda <DECODE_MODE> \
     --model <MODEL_PATH> \
@@ -26,8 +26,8 @@ After inference, we extract the generated code for evaluation.
 
 ```bash
 python parse_results.py \
-    --input ./results/<RESULT_DIR> \
-    --output ./results/<RESULT_DIR> \
+    --input <RESULT_DIR> \
+    --output <RESULT_DIR> \
     --format all
 ```
 
@@ -42,7 +42,7 @@ First, run post-processing to clean and normalize predictions:
 
 ```bash
 python eval/post_process.py \
-    --data_path ./results/<RESULT_DIR>/parsed_results.jsonl \
+    --data_path <RESULT_DIR>/parsed_results.jsonl \
     --parsed
 ```
 
@@ -50,10 +50,10 @@ Then compute CodeBLEU:
 
 ```bash
 python eval/CodeBLEU/calc_code_bleu.py \
-    --data_path ./results/<RESULT_DIR>/post_parsed_results.jsonl \
+    --data_path <RESULT_DIR>/post_parsed_results.jsonl \
     --work generation \
     --lang python \
-    --output_dir ./results/<RESULT_DIR>
+    --output_dir <RESULT_DIR>
 ```
 
 ### 4. Execution-based Evaluation
@@ -72,10 +72,10 @@ Then run execution evaluation:
 
 ```bash
 python pass_k.py \
-    --output_file ./results/<RESULT_DIR>/processed_parsed_results.jsonl \
-    --log_file ./results/<RESULT_DIR>/test_output.jsonl \
-    --source_code_root ./results/<RESULT_DIR>_source/Source_Code \
-    --data_file ./data.jsonl \
+    --output_file <RESULT_DIR>/processed_parsed_results.jsonl \
+    --log_file <RESULT_DIR>/test_output.jsonl \
+    --source_code_root <RESULT_DIR>_source/Source_Code \
+    --data_file <data.json> \
     --n 1 \
     --k 1
 
@@ -83,4 +83,4 @@ python pass_k.py \
 rm -rf ./results/<RESULT_DIR>_source
 ```
 
-> 🔗 The evaluation source code and test data can be found at: [https://github.com/seketeam/DevEval/](https://github.com/seketeam/DevEval/)
+> 🔗 The evaluation source code and test data can be found at: [DevEval](https://github.com/seketeam/DevEval/)
