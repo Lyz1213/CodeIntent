@@ -1,0 +1,11 @@
+#compute_environment: LOCAL_MACHINE
+#distributed_type: MULTI_GPU
+#mixed_precision: bf16
+#num_processes: 4
+compute_environment: LOCAL_MACHINE
+distributed_type: FSDP
+fsdp_config:
+  sharding_strategy: FULL_SHARD         # ZeRO-3 style
+  mixed_precision: bf16
+  use_orig_params: true
+num_processes: 4
