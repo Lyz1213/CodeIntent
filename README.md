@@ -10,3 +10,4 @@ $ conda env create --name=codeintent
 $ conda activate codeintent
 $ pip install -r requirements.txt
 ```
+For detailed instructions on training, evaluation, and data preparation, please refer to the corresponding directories
