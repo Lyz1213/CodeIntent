@@ -12,7 +12,7 @@ python prepare_llamatokenizer.py \
   --out_dir <TOKENIZER_OUTPUT_DIR>
 ```
 
-- `<BASE_MODEL_NAME>`: HuggingFace model path (e.g., `codellama/CodeLlama-13b-Python-hf`)
+- `<BASE_MODEL_NAME>`: HuggingFace model path (e.g., `codellama/CodeLlama-7b-Python-hf`)
 - `<TOKENIZER_OUTPUT_DIR>`: Directory to save the modified tokenizer
 
 ### 2. Data Filtering and Preprocessing
@@ -27,7 +27,7 @@ python filter_data.py \
   --max_len <MAX_SEQUENCE_LENGTH>
 ```
 
-- `<RAW_JSON_PATH>`: Path to raw data (e.g., `training_v3.json`)
+- `<RAW_JSON_PATH>`: Path to raw data (e.g., `training.json`)
 - `<FILTERED_DATA_DIR>`: Output path for filtered JSON data
 - `<MAX_SEQUENCE_LENGTH>`: Max token length for truncation (e.g., 4096)
 
